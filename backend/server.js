@@ -3,6 +3,8 @@ const notes = require("./data/notes");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+const userRoutes = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 require("dotenv").config();
 
@@ -26,10 +28,8 @@ app.get("/api/notes", (req, res) => {
   res.json(notes);
 });
 
-app.get("/api/notes/:id", (req, res) => {
-  const note = notes.find((n) => n._id === req.params.id);
+app.use("/api/users", userRoutes);
 
-  res.send(note);
-});
-
+app.use(notFound);
+app.use(errorHandler);
 app.listen(PORT, console.log(`server started on PORT ${PORT}`));
