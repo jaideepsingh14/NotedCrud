@@ -125,7 +125,7 @@ const RegisterScreen = () => {
             />
           </Form.Group>
 
-          {picMessage && (
+          {/* {picMessage && (
             <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
           )}
           <Form.Group controlId="pic">
@@ -137,7 +137,7 @@ const RegisterScreen = () => {
               label="Upload Profile Picture"
               custom
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Button variant="primary" type="submit">
             Register
