@@ -125,19 +125,19 @@ const RegisterScreen = () => {
             />
           </Form.Group>
 
-          {/* {picMessage && (
+          {picMessage && (
             <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
           )}
           <Form.Group controlId="pic">
             <Form.Label>Profile Picture</Form.Label>
-            <Form.File
+            <Form.Control
               onChange={(e) => postDetails(e.target.files[0])}
               id="custom-file"
-              type="image/png"
+              type="file"
               label="Upload Profile Picture"
               custom
             />
-          </Form.Group> */}
+          </Form.Group>
 
           <Button variant="primary" type="submit">
             Register
